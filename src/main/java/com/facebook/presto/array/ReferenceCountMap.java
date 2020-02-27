@@ -33,7 +33,7 @@ import static java.lang.reflect.Array.getLength;
 // This may lead to hash collision, in which case we will under count memory usage.
 // But we believe the performance boost is worth the cost.
 public final class ReferenceCountMap
-        extends Long2IntOpenHashMap
+    extends Long2IntOpenHashMap
 {
     private static final int INSTANCE_SIZE = ClassLayout.parseClass(ReferenceCountMap.class).instanceSize();
 
@@ -63,7 +63,7 @@ public final class ReferenceCountMap
      */
     public long sizeOf()
     {
-        return INSTANCE_SIZE + SizeOf.sizeOf(key) + SizeOf.sizeOf(value) + SizeOf.sizeOf(used);
+        return INSTANCE_SIZE + SizeOf.sizeOf(key) + SizeOf.sizeOf(value);
     }
 
     /**
